@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Account Details</title>
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<div align="center">
+		<h1>Search Details</h1>
+		<br>
+		<div class="col-sm-4">
+			
+			<form action="#" th:action="@{/search}" th:object="${accountdetails}" method="POST">
+				<div align="left">
+					<tr>
+						<label class="form-label">Account ID</label>
+					<td>
+						<input type="text" th:field="*{id}" class="form-control" placeholder="Account id">
+					</td>
+					</tr>
+				</div>
+				
+				<br>
+				<tr>
+					<td colspan="2"><button type="submit" class="btn btn-info">Search</button></td>
+				</tr>
+				<h2>Account Details</h2>
+				<div align="left">
+				<tr>
+					<label class="form-label">Account Number</label>
+				<td>
+					 <input type="text" th:field="${accountdetails.account_Num}" class="form-control" placeholder="Account Number">
+				</td>
+				</tr>
+				<br>
+				<tr>
+					<label class="form-label">Account Type</label>
+				<td>
+					 <input type="text" th:field="${accountdetails.acc_Type}" class="form-control" placeholder="Account Type">
+				</td>
+				</tr>
+				<br>
+				<tr>
+					<label class="form-label">Branch name</label>
+				<td>
+					 <input type="text" th:field="${accountdetails.branch_Name}" class="form-control" placeholder="Brance name">
+				</td>
+				</tr>
+				<br>
+				<tr>
+					<label class="form-label">Balance</label>
+				<td>
+					 <input type="text" th:field="${accountdetails.balance}" class="form-control" placeholder="Balance">
+				</td>
+				</tr>
+				
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
